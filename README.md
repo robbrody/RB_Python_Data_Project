@@ -2,10 +2,10 @@
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
 
-To find the most demanded skills for the top 3 most popular data roles, I filtered out those positions by the most popular, and got the top 5 skills for each of these top 3 roles. This query highlights the most popular job titles and their top skills, showing which skills I should pay attentin to depending on the role I'm targeting.
+I started by filtering the jobs for US based jobs only. I found the most demanded skills for the top 3 most popular data roles, I filtered out those positions by the most popular, and got the top 5 skills for each of these top 3 roles. This query highlights the 3 most popular job titles and their associated top 5 skills, showing which skills I should pay attentin to depending on the data role I'm targeting.
 
 View my notebook with detailed steps here:  
-[2_Skill_Demand.ipynb](3_Project\2_Skill_Demand.ipynb)
+[2_Skill_Demand.ipynb](3_Project/2_Skill_Demand.ipynb)
 
 ### Visualize Data
 
@@ -37,7 +37,7 @@ plt.show()
 
 ### Results
 
-![Visualization of Top Skills for Top Roles](3_Project\images\skill_demand_all_data_roles.png)
+![Visualization of Top Skills for Top Roles](3_Project/images/skill_demand_all_data_roles.png)
 
 ### Insights
 
