@@ -2,12 +2,12 @@
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
 
-I started by filtering the jobs for US based jobs only. I found the most demanded skills for the top 3 most popular data roles, I filtered out those positions by the most popular, and got the top 5 skills for each of these top 3 roles. This query highlights the 3 most popular job titles and their associated top 5 skills, showing which skills I should pay attentin to depending on the data role I'm targeting.
+I started by filtering the data for US based jobs only. I found the most demanded skills for the top 3 most popular data roles. I filtered out those positions by the most popular, and got the top 5 skills for each of these top 3 roles. This query highlights the 3 most popular job titles and their associated top 5 skills, showing which skills are most requested by companies for top data roles.
 
 View my notebook with detailed steps here:  
 [2_Skill_Demand.ipynb](3_Project/2_Skill_Demand.ipynb)
 
-### Visualize Data
+### Visualize the Data
 
 ```python
 fig, ax = plt.subplots(len(job_titles), 1)
@@ -48,7 +48,7 @@ plt.show()
 
 
 
-## 2. How are in-demand skills trending for Data Analysts?
+## 2. How are in-demand skills trending for data analysts?
 
 I started by filtering the data for Data Analyst jobs in the United States. I created a new column for the month in order to breakdown the skill demand by month. I then needed to explode the individual skills per job posting for analysis. I created a pivot table that was sorted by skill count per month, and also created the totals in order to sort by those totals, and creat percentage based values for analysis. I then charted the 5 most in demand skills by their posting percentage throughout 2023.
 
@@ -98,12 +98,14 @@ df_DA_US_percent
 * Excel shows it's stability in the second in-demand skill. This shows the continuing relavance for quick data manipulations for Data Analyst roles, despite more advanced tools.
 * Tableau and Python show their similar demands in Data Analyst roles.  This shows data visualization and programming skills are essential but secondary to SQL querying skills. Python shows an increase in demand thorughout 2023.
 
-## 3. How well do jobs and skills pay for Data Analysts?
+
+
+## 3. How well do jobs and skills pay for data analysts?
 
 ### Salary Anaysis for Data Roles
-I filtered the data for US based roles. I dropped any non values for annual salary from the datset. I found the 6 most in demand roles and plotted their median slaries in a boxplot.
+I filtered the data for US based roles. I dropped any non values for annual salary from the datset. I found the 6 most in demand roles and plotted their median salaries in a boxplot.
 
-### Visualize Data
+### Visualize the Data
 
 ```python
 
@@ -122,17 +124,21 @@ plt.show()
 
 ### Results
 
-![Salary Distribution of Data Jobs in the US](3_Project/images/Salary_distribution_Top6_Data_Roles_US.png)
+![Salary Distribution of Data Jobs in the US](3_Project/images/Salary_distribution_Top6_Data_Roles_US.png)*Box Plot Showing the Distribution of Salary for Data Roles in The United States 2023*
 
 ### Insights:
 * Senior Data Scientist and Senior Data Engineer have the highest median salaries. These roles also have the widest range in salary. All Senior positions pay higher than their standard counterpart.
 * Data Scientists and Data Engineers are very comparable in their median salaries. They both higher on avergage than Analysts of any seniority.
 * Analysts both Senior and standard offer median salaries near $100K USD, but are lower on average than other roles. More technical roles are higher compensated.
 
+
+
 ## 4. How well do jobs and skills pay for Data Analysts?
 
 ### Investigate Median Salary vs Skill for Data Analysts
 I filtered the data for Data Analysts ROles in the US. I dropped any none values for Salary, and exploded the skills listed for analysis. I determined the Top 10 paying skills for median annual salary, and also determined the Top 10 in demand skills and their associated median annual salary. I graphed a bar chart showing both of these Top 10 skills together.
+
+### Visualize the Data
 
 ```python
 
@@ -172,5 +178,75 @@ View my notebook with detailed steps for questions 3 & 4 here:
 
 ### Insights:
 * The highest paid skills are specialized tools and platforms. They offer as mush as twice the median salary for US Data Analysts, but they only appear in a few of the job postings.
-* For the Top 10 most in-demand skills, Python is the highest paying in median salary. Tableau and SQL also offer higher pay for US Data Analyst positions.
-* The microsoft suite of Powerpoint, Excel and Word are in high demand but do not offer as much salary as the more techincal programs, and languages.
+* For the Top 10 most in-demand skills, Python is the highest paying in median salary. Tableau and SQL also offer higher pay for US Data Analyst positions. It definitely pays more to learn these programming and visualizations programs.
+* The microsoft suite of Powerpoint, Excel and Word are in high demand but do not offer as much salary as the more techincal programs, and languages. It is still good to know these programs as they are among the highest desired skills by Companies.
+
+
+
+## 5. What is the most optimal skill to learn for Data Analysts?
+
+I started by importing libraries, loading data, and cleaning the data. I filtered the data for Data Analyst jobs in the United States. I removed any none values from the annual salary data. I exploded the skills for analysis. I found the 12 most in demand skills by percentage. I extracted the technology categories for each skill and merged the datasets into one that could be used for plotting a graph.
+
+### Visualize the Data
+
+```python
+from adjustText import adjust_text
+
+#df_plot.plot(kind='scatter', x='skill_percent', y='median_salary')
+sns.scatterplot(
+    data=df_plot,
+    x='skill_percent', 
+    y='median_salary', 
+    hue='technology'
+    )
+
+# Set axis labels, title and legend
+plt.title('Most Optimal Skills for Data Analysts in the US')
+plt.xlabel('Percent of Data Analyst Jobs')
+plt.ylabel('Median Yearly Salary (USD)')
+
+
+# Prepare texts for AdjustText
+texts = []
+for i in range(len(df_plot)):
+    # Use the 'skill' column instead of index for text annotation
+    skill_name = df_plot.loc[i, 'skills']
+    x = df_plot.loc[i, 'skill_percent']
+    y = df_plot.loc[i, 'median_salary']
+    texts.append(plt.annotate(skill_name, (x, y)))
+
+# Adjust text to avoid overlap
+adjust_text(
+    texts,
+    autoalign='xy',  # Allow text to align automatically
+    only_move={'points': 'y', 'texts': 'y'},  # Move only in the y-direction
+    arrowprops=dict(arrowstyle='->', color='gray', lw=1),  # Optional arrows
+    force_text=3.5,  # Increase force for spreading texts
+    force_points=2.3  # Prevent text from colliding with points
+)
+
+# Layout adjustments
+sns.despine()
+sns.set_theme(style='ticks')
+plt.tight_layout()
+
+# Format y-axis as currency and x-axis as percentage
+ax=plt.gca()
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K'))
+ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, pos: f'{int(x):,}%'))
+
+plt.show()
+
+```
+
+View my notebook with detailed steps here:  
+[5_Optimal_Skills.ipynb](3_Project/5_Optimal_Skills.ipynb)
+
+### Results
+
+![Optimal Skills for Data Analysts US](3_Project/images/Optimal_Skills_For_Data_Analysts_US.png)*Scatter Plot Showing the Most Optimal Skills for Data Analysts in the United States*
+
+### Insights:
+* Programming languages (specifically Python and SQL) appear to be the most optimal skills to learn as data analysts in the United States. They are at the top corner of the graph in terms of median salary and percentage of job postings. In the mid-tier you also have programming languages R and SAS. Python and SQL skills are the most optimal to learn for Data Anlaysts in the United States.
+* The next most optimal skill technology category appears to be analyst tools, specifically Tableau and Excel, as the 3rd and 4th most optimal skills. Further down the list of optimal analyst tools are Power BI, Powerpoint, and Word.
+* Database and cloud technologies do not appear to be as likely in job postings, but they do pay well. These would be the least optimal skills to learn based on these findings.
