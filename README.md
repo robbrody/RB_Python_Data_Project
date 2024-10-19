@@ -48,7 +48,7 @@ plt.show()
 
 
 
-## 2. How are in-demand skills trending for data analysts?
+## 2. How are in-demand skills trending for Data Analysts?
 
 For this analysis I began by filtering the dataset to focus specifically on data analyst roles in the United States. To analyze trends over time I created a new column to represent the month of each job posting. Next, I used exploding techniques to break down individual skills listed within each posting, ensuring that every skill could be analyzed independently.
 
@@ -102,7 +102,7 @@ df_DA_US_percent
 
 
 
-## 3. How well do jobs and skills pay for data analysts?
+## 3. How well do jobs and skills pay for Data Analysts?
 
 ### Salary Anaysis for Data Roles
 
