@@ -2,7 +2,7 @@
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
 
-I started by filtering the data for US based jobs only. I found the most demanded skills for the top 3 most popular data roles. I filtered out those positions by the most popular, and got the top 5 skills for each of these top 3 roles. This query highlights the 3 most popular job titles and their associated top 5 skills, showing which skills are most requested by companies for top data roles.
+This analysis utilizes Luke Barrousse’s 2023 Data Job Dataset, a collection of real-world data extracted from job postings worldwide. The dataset was initially filtered to focus on U.S.-based positions. From this subset, I identified the most in-demand skills for the top three most popular data roles. For each role, the data was further refined to highlight the top five skills most frequently requested by employers. This approach provides insights into the key competencies sought by companies, illustrating the essential skills required for high-demand data roles in the U.S. market.
 
 View my notebook with detailed steps here:  
 [2_Skill_Demand.ipynb](3_Project/2_Skill_Demand.ipynb)
@@ -50,7 +50,10 @@ plt.show()
 
 ## 2. How are in-demand skills trending for data analysts?
 
-I started by filtering the data for data analyst jobs in the United States. I created a new column for the month in order to breakdown the skill demand by month. I then needed to explode the individual skills per job posting for analysis. I created a pivot table that was sorted by skill count per month, and also created the totals in order to sort by those totals, and creat percentage based values for analysis. I then charted the 5 most in demand skills by their posting percentage throughout 2023.
+
+For this analysis, I began by filtering the dataset to focus specifically on data analyst roles in the United States. To analyze trends over time, I created a new column to represent the month of each job posting. Next, I used exploding techniques to break down individual skills listed within each posting, ensuring that every skill could be analyzed independently.
+
+I then built a pivot table, organized by monthly skill counts, which also included total counts to rank the most frequent skills. Using these totals, I calculated percentage-based values for further analysis. Finally, I visualized the top five most in-demand skills by plotting their percentage occurrence across each month in 2023, revealing key trends in skill demand over time.
 
 View my notebook with detailed steps here:  
 [3_Skills_Trend.ipynb](3_Project/3_Skills_Trend.ipynb)
@@ -103,7 +106,8 @@ df_DA_US_percent
 ## 3. How well do jobs and skills pay for data analysts?
 
 ### Salary Anaysis for Data Roles
-I filtered the data for US based roles. I dropped any non values for annual salary from the datset. I found the 6 most in demand roles and plotted their median salaries in a boxplot.
+
+I filtered the dataset to focus on U.S.-based roles and removed entries with missing values for annual salary to ensure accurate analysis. Next, I identified the six most in-demand roles and visualized their median salaries using a box plot, highlighting the distribution and variability in compensation across these key positions.
 
 ### Visualize the Data
 
@@ -137,7 +141,8 @@ plt.show()
 ## 4. How well do jobs and skills pay for Data Analysts?
 
 ### Investigate Median Salary vs Skill for Data Analysts
-I filtered the data for data analysts roles in the US. I dropped any none values for salary, and exploded the skills listed for analysis. I determined the Top 10 paying skills for median annual salary, and also determined the Top 10 in demand skills and their associated median annual salary. I graphed a bar chart showing both of these Top 10 skills together.
+
+I filtered the dataset to focus on data analyst roles within the U.S. and removed entries with missing salary values to maintain data integrity. To analyze skill demand, I exploded the skills column, ensuring each individual skill was treated as a separate entry for analysis. I identified the Top 10 highest-paying skills based on median annual salary and also determined the Top 10 most in-demand skills, along with their corresponding median salaries. Finally, I visualized these insights in a bar chart comparing the Top 10 highest-paying skills against the Top 10 most in-demand skills.
 
 ### Visualize the Data
 
@@ -187,7 +192,7 @@ View my notebook with detailed steps for questions 3 & 4 here:
 
 ## 5. What is the most optimal skill to learn for Data Analysts?
 
-I started by importing libraries, loading data, and cleaning the data. I filtered the data for Data Analyst jobs in the United States. I removed any none values from the annual salary data. I exploded the skills for analysis. I found the 12 most in demand skills by percentage. I extracted the technology categories for each skill and merged the datasets into one that could be used for plotting a graph.
+For the final analysis, I began by importing the necessary libraries, loading the dataset, and performing data cleaning to ensure accuracy. I then filtered the data to focus exclusively on Data Analyst roles within the U.S. and removed any missing values from the annual salary data. To facilitate skill-level analysis, I exploded the skills column, allowing each individual skill to be analyzed separately. From this, I identified the 12 most in-demand skills by percentage occurrence. Additionally, I mapped each skill to its corresponding technology category and merged the relevant datasets to create a consolidated dataset, which was then used to plot the final graph.
 
 ### Visualize the Data
 
