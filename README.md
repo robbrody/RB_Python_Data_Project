@@ -50,7 +50,7 @@ plt.show()
 
 ## 2. How are in-demand skills trending for data analysts?
 
-I started by filtering the data for Data Analyst jobs in the United States. I created a new column for the month in order to breakdown the skill demand by month. I then needed to explode the individual skills per job posting for analysis. I created a pivot table that was sorted by skill count per month, and also created the totals in order to sort by those totals, and creat percentage based values for analysis. I then charted the 5 most in demand skills by their posting percentage throughout 2023.
+I started by filtering the data for data analyst jobs in the United States. I created a new column for the month in order to breakdown the skill demand by month. I then needed to explode the individual skills per job posting for analysis. I created a pivot table that was sorted by skill count per month, and also created the totals in order to sort by those totals, and creat percentage based values for analysis. I then charted the 5 most in demand skills by their posting percentage throughout 2023.
 
 View my notebook with detailed steps here:  
 [3_Skills_Trend.ipynb](3_Project/3_Skills_Trend.ipynb)
@@ -124,7 +124,8 @@ plt.show()
 
 ### Results
 
-![Salary Distribution of Data Jobs in the US](3_Project/images/Salary_distribution_Top6_Data_Roles_US.png)*Box Plot Showing the Distribution of Salary for Data Roles in The United States 2023*
+![Salary Distribution of Data Jobs in the US](3_Project/images/Salary_distribution_Top6_Data_Roles_US.png)
+*Box Plot Showing the Distribution of Salary for Data Roles in The United States 2023*
 
 ### Insights:
 * Senior Data Scientist and Senior Data Engineer have the highest median salaries. These roles also have the widest range in salary. All Senior positions pay higher than their standard counterpart.
@@ -136,7 +137,7 @@ plt.show()
 ## 4. How well do jobs and skills pay for Data Analysts?
 
 ### Investigate Median Salary vs Skill for Data Analysts
-I filtered the data for Data Analysts ROles in the US. I dropped any none values for Salary, and exploded the skills listed for analysis. I determined the Top 10 paying skills for median annual salary, and also determined the Top 10 in demand skills and their associated median annual salary. I graphed a bar chart showing both of these Top 10 skills together.
+I filtered the data for data analysts roles in the US. I dropped any none values for salary, and exploded the skills listed for analysis. I determined the Top 10 paying skills for median annual salary, and also determined the Top 10 in demand skills and their associated median annual salary. I graphed a bar chart showing both of these Top 10 skills together.
 
 ### Visualize the Data
 
@@ -174,7 +175,8 @@ View my notebook with detailed steps for questions 3 & 4 here:
 
 ### Results
 
-![Top 10 paying skills and Top 10 In Demand Skills and their Median Salary](3_Project/images/Top_10_paid_skill_in_demand_skill_DA_US.png)*Bar Graph Showing the Top 10 Paid & In-Demand Skills for Data Analysts in the US 2023*
+![Top 10 paying skills and Top 10 In Demand Skills and their Median Salary](3_Project/images/Top_10_paid_skill_in_demand_skill_DA_US.png)
+*Bar Graph Showing the Top 10 Paid & In-Demand Skills for Data Analysts in the US 2023*
 
 ### Insights:
 * The highest paid skills are specialized tools and platforms. They offer as mush as twice the median salary for US Data Analysts, but they only appear in a few of the job postings.
@@ -244,7 +246,8 @@ View my notebook with detailed steps here:
 
 ### Results
 
-![Optimal Skills for Data Analysts US](3_Project/images/Optimal_Skills_For_Data_Analysts_US.png)*Scatter Plot Showing the Most Optimal Skills for Data Analysts in the United States*
+![Optimal Skills for Data Analysts US](3_Project/images/Optimal_Skills_For_Data_Analysts_US.png)
+*Scatter Plot Showing the Most Optimal Skills for Data Analysts in the United States*
 
 ### Insights:
 * Programming languages (specifically Python and SQL) appear to be the most optimal skills to learn as data analysts in the United States. They are at the top corner of the graph in terms of median salary and percentage of job postings. In the mid-tier you also have programming languages R and SAS. Python and SQL skills are the most optimal to learn for Data Anlaysts in the United States.
