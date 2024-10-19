@@ -2,7 +2,7 @@
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
 
-This analysis utilizes Luke Barrousse’s 2023 Data Job Dataset, a collection of real-world data extracted from job postings worldwide. The dataset was initially filtered to focus on U.S.-based positions. From this subset, I identified the most in-demand skills for the top three most popular data roles. For each role, the data was further refined to highlight the top five skills most frequently requested by employers. This approach provides insights into the key competencies sought by companies, illustrating the essential skills required for high-demand data roles in the U.S. market.
+This analysis utilizes Luke Barrousse’s 2023 Data Job Dataset, a collection of real-world data extracted from job postings worldwide. The dataset was initially filtered to focus on U.S.-based positions. From this subset I identified the most in-demand skills for the top three most popular data roles. For each role the data was further refined to highlight the top five skills most frequently requested by employers. This approach provides insights into the key competencies sought by companies, illustrating the essential skills required for high-demand data roles in the U.S. market.
 
 View my notebook with detailed steps here:  
 [2_Skill_Demand.ipynb](3_Project/2_Skill_Demand.ipynb)
@@ -38,7 +38,7 @@ plt.show()
 ### Results
 
 ![Visualization of Top Skills for Top Roles](3_Project/images/skill_demand_all_data_roles.png) 
-*Bar Graph Showing the Top 5 In Demand Skills for Data Analyst, Data Engineer, and Data Scientist in the US in 2023.*
+*Bar Graph Showing the Top 5 In-Demand Skills for Data Analyst, Data Engineer, and Data Scientist in the US in 2023.*
 
 ### Insights
 
@@ -50,10 +50,9 @@ plt.show()
 
 ## 2. How are in-demand skills trending for data analysts?
 
+For this analysis I began by filtering the dataset to focus specifically on data analyst roles in the United States. To analyze trends over time I created a new column to represent the month of each job posting. Next, I used exploding techniques to break down individual skills listed within each posting, ensuring that every skill could be analyzed independently.
 
-For this analysis, I began by filtering the dataset to focus specifically on data analyst roles in the United States. To analyze trends over time, I created a new column to represent the month of each job posting. Next, I used exploding techniques to break down individual skills listed within each posting, ensuring that every skill could be analyzed independently.
-
-I then built a pivot table, organized by monthly skill counts, which also included total counts to rank the most frequent skills. Using these totals, I calculated percentage-based values for further analysis. Finally, I visualized the top five most in-demand skills by plotting their percentage occurrence across each month in 2023, revealing key trends in skill demand over time.
+I then built a pivot table, organized by monthly skill counts, which also included total counts to rank the most frequent skills. Using these totals I calculated percentage-based values for further analysis. Finally, I visualized the top five most in-demand skills by plotting their percentage occurrence across each month in 2023, revealing key trends in skill demand over time.
 
 View my notebook with detailed steps here:  
 [3_Skills_Trend.ipynb](3_Project/3_Skills_Trend.ipynb)
@@ -97,8 +96,8 @@ df_DA_US_percent
 
 ### Insights:
 
-* SQL maintains its highest demand throughout the year, but does show some decline in importance This reflects it is an essential skill and it's high demand in Data Analyst roles.
-* Excel shows it's stability in the second in-demand skill. This shows the continuing relavance for quick data manipulations for Data Analyst roles, despite more advanced tools.
+* SQL maintains its highest demand throughout the year, but does show some decline in importance. This reflects it is an essential skill and its high demand in Data Analyst roles.
+* Excel shows its stability in the second in-demand skill. This shows the continuing relevance for quick data manipulations for Data Analyst roles, despite more advanced tools.
 * Tableau and Python show their similar demands in Data Analyst roles.  This shows data visualization and programming skills are essential but secondary to SQL querying skills. Python shows an increase in demand thorughout 2023.
 
 
@@ -133,7 +132,7 @@ plt.show()
 
 ### Insights:
 * Senior Data Scientist and Senior Data Engineer have the highest median salaries. These roles also have the widest range in salary. All Senior positions pay higher than their standard counterpart.
-* Data Scientists and Data Engineers are very comparable in their median salaries. They both higher on avergage than Analysts of any seniority.
+* Data Scientists and Data Engineers are very comparable in their median salaries. They are both higher on average than Analysts of any seniority.
 * Analysts both Senior and standard offer median salaries near $100K USD, but are lower on average than other roles. More technical roles are higher compensated.
 
 
@@ -186,7 +185,7 @@ View my notebook with detailed steps for questions 3 & 4 here:
 ### Insights:
 * The highest paid skills are specialized tools and platforms. They offer as mush as twice the median salary for US Data Analysts, but they only appear in a few of the job postings.
 * For the Top 10 most in-demand skills, Python is the highest paying in median salary. Tableau and SQL also offer higher pay for US Data Analyst positions. It definitely pays more to learn these programming and visualizations programs.
-* The microsoft suite of Powerpoint, Excel and Word are in high demand but do not offer as much salary as the more techincal programs, and languages. It is still good to know these programs as they are among the highest desired skills by Companies.
+* The Microsoft suite of Powerpoint, Excel and Word are in high demand but do not offer as much salary as the more techincal programs, and languages. It is still good to know these programs as they are among the highest desired skills by companies.
 
 
 
@@ -255,6 +254,6 @@ View my notebook with detailed steps here:
 *Scatter Plot Showing the Most Optimal Skills for Data Analysts in the United States*
 
 ### Insights:
-* Programming languages (specifically Python and SQL) appear to be the most optimal skills to learn as data analysts in the United States. They are at the top corner of the graph in terms of median salary and percentage of job postings. In the mid-tier you also have programming languages R and SAS. Python and SQL skills are the most optimal to learn for Data Anlaysts in the United States.
+* Programming languages (specifically Python and SQL) appear to be the most optimal skills to learn for data analysts in the United States. They are at the top corner of the graph in terms of median salary and percentage of job postings. In the mid-tier you also have programming languages R and SAS. Python and SQL skills are the most optimal to learn for Data Anlaysts in the United States.
 * The next most optimal skill technology category appears to be analyst tools, specifically Tableau and Excel, as the 3rd and 4th most optimal skills. Further down the list of optimal analyst tools are Power BI, Powerpoint, and Word.
-* Database and cloud technologies do not appear to be as likely in job postings, but they do pay well. These would be the least optimal skills to learn based on these findings.
+* Database and cloud technologies do not appear to be as likely in job postings but they do pay well. These would be the least optimal skills to learn based on these findings.
