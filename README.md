@@ -2,7 +2,7 @@
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
 
-This analysis utilizes Luke Barrousse’s 2023 Data Job Dataset, a collection of real-world data extracted from job postings worldwide. The dataset was initially filtered to focus on U.S.-based positions. From this subset I identified the most in-demand skills for the top three most popular data roles. For each role the data was further refined to highlight the top five skills most frequently requested by employers. This approach provides insights into the key competencies sought by companies, illustrating the essential skills required for high-demand data roles in the U.S. market.
+This analysis utilizes Luke Barrousse’s 2023 Data Job Dataset, a collection of real-world data extracted from job postings worldwide with approximately 787,000 rows of data. The dataset was initially filtered to focus on U.S.-based positions. From this subset I identified the most in-demand skills for the top three most popular data roles. For each role the data was further refined to highlight the top five skills most frequently requested by employers. This approach provides insights into the key competencies sought by companies, illustrating the essential skills required for high-demand data roles in the U.S. market.
 
 View my notebook with detailed steps here:  
 [2_Skill_Demand.ipynb](3_Project/2_Skill_Demand.ipynb)
