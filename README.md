@@ -1,3 +1,54 @@
+# Overview
+I am pleased to present my analysis of the data job market, with a particular focus on data analyst positions. This project was driven by the need to navigate and comprehend the complexities of the job market more effectively. My research examines the most sought-after skills and the highest-paying opportunities available to data analysts.
+
+The data utilized for this analysis is derived from Luke Barousse's Python Course, which provides a robust foundation, including comprehensive information on job titles, salaries, locations, and key skills. Using a series of Python scripts, I will explore critical questions related to the demand for specific skills, trends in salaries, and the relationship between job demand and compensation in the field of data analytics.
+
+## The Questions
+Below are the questions I wanted to answer in my project:
+
+1. What are the most demanded skills for the top 3 most popular data roles?
+2. How are in-demand skills trending for Data Analysts?
+3. How well do jobs and skills pay for Data Analysts?
+4. What is the most optimal skill to learn for Data Analysts?
+
+## Tools Used for the Analysis
+I used the following tools for this analysis:
+
+* <u>**Python**</u>: The main tool for the analysis, used to analyze the data, and find the answer to the questions posed. The following libraries were used in Python:
+    * **Pandas Library**: Used to analyze data.
+    * **Matplotlib Library**: To visualize the data.
+    * **Seaborn Library**: Create more advanced visualizations.
+    * **Load_Dataset**: Used to load data into Python
+* <u>**Jupyter Notebooks**</u>: Tool used to run Python scripts, and easily include notes and analysis.
+* <u>**Visual Studio Code**</u>: Program for executing Python scrpits.
+* <u>**Git & GitHub**</u>: Version control and sharing Python code and analysis.
+
+## Data Preparation and Cleaning
+
+```python
+# Importing Libraries
+import ast
+import pandas as pd
+import seaborn as sns
+from datasets import load_dataset
+import matplotlib.pyplot as plt  
+
+# Loading Data
+dataset = load_dataset('lukebarousse/data_jobs')
+df = dataset['train'].to_pandas()
+
+# Data Cleanup
+df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
+df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
+
+```
+## Filter for United States based Jobs
+To focus my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the United States.
+
+```python
+df_US = df[df['job_country'] == 'United States']
+```
+
 # The Analysis
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles?
@@ -257,3 +308,6 @@ View my notebook with detailed steps here:
 * Programming languages (specifically Python and SQL) appear to be the most optimal skills to learn for data analysts in the United States. They are at the top corner of the graph in terms of median salary and percentage of job postings. In the mid-tier you also have programming languages R and SAS. Python and SQL skills are the most optimal to learn for Data Anlaysts in the United States.
 * The next most optimal skill technology category appears to be analyst tools, specifically Tableau and Excel, as the 3rd and 4th most optimal skills. Further down the list of optimal analyst tools are Power BI, Powerpoint, and Word.
 * Database and cloud technologies do not appear to be as likely in job postings but they do pay well. These would be the least optimal skills to learn based on these findings.
+
+# Conclusion
+In conclusion, the analysis highlights the critical role of programming languages, particularly Python and SQL, in the data job market, especially for Data Analysts, Data Scientists, and Data Engineers. While SQL consistently ranks as the most requested skill across roles, with over half of job postings requiring it for Data Analysts and Data Scientists, specialized skills in AWS, Azure, and Spark are essential for Data Engineers. Excel and Tableau remain significant, demonstrating the importance of general business tools and data visualization skills. Despite the high salaries associated with senior positions, Analysts tend to earn less compared to their more technical counterparts. Ultimately, pursuing programming languages and data visualization tools emerges as the most advantageous strategy for aspiring Data Analysts, while familiarity with essential business software continues to be beneficial in enhancing employability.
