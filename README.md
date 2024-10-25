@@ -20,7 +20,7 @@ I used the following tools for this analysis:
     * **Seaborn Library**: Create more advanced visualizations.
     * **Load_Dataset**: Used to load data into Python
 * <u>**Jupyter Notebooks**</u>: Tool used to run Python scripts, and easily include notes and analysis.
-* <u>**Visual Studio Code**</u>: Program for executing Python scrpits.
+* <u>**Visual Studio Code**</u>: Program for executing Python scripts.
 * <u>**Git & GitHub**</u>: Version control and sharing Python code and analysis.
 
 ## Data Preparation and Cleaning
